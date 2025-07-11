@@ -1,6 +1,6 @@
 // interactjsを使用してテスト用のページ
 'use client'
-import DraggableSquare from "./component/draggablesquare";
+import DraggableSquare from '@/components/draggablesquare';
 
 export default function InteractJS() {
    const randomColor = () => {
