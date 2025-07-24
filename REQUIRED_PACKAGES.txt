@@ -1,0 +1,28 @@
+# Portfolio Site - Required Packages
+
+# Firebase
+firebase
+
+# AWS SDK (for S3 file uploads)
+aws-sdk
+
+# UI and Icons
+lucide-react
+framer-motion
+
+# Image optimization and handling
+sharp
+
+# Form handling and validation
+react-hook-form
+zod
+
+# Date handling
+date-fns
+
+# Utility libraries
+clsx
+class-variance-authority
+
+# Development dependencies
+@types/aws-sdk

@@ -1,5 +1,7 @@
 import { db } from "./config";
-import { collection, getDocs, query, where, orderBy, limit, doc, getDoc, addDoc, updateDoc, deleteDoc, DocumentData } from "firebase/firestore";
+import { collection, DocumentData, doc, getDoc, getDocs, addDoc, updateDoc, deleteDoc, query, where, orderBy, limit } from "firebase/firestore";
+
+
 
 export async function getEmployees(searchTerm: string = "") {
     try
