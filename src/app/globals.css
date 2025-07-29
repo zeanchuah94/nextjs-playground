@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
 
 /* :root {
   --background: #ffffff;

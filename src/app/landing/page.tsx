@@ -1,17 +1,18 @@
 'use client';
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from "@material-tailwind/react";
+import Carousel from "@/components/Carousel";
 import React from "react";
-
 
 export default function LandingPage() {
     const [open, setOpen] = React.useState(1);
  
     const handleOpen = (value:number) => setOpen(open === value ? 0 : value);
- 
+
+    const carouselImages = [
+        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        "https://www.skyweaver.net/images/media/wallpapers/wallpaper1.jpg",
+    ];
+
     return (
     <main className="h-screen font-mono bg-white dark:bg-gray-800">
         <header className="sticky top-0 z-30 flex items-center w-full h-10 sm:h-20 bg-gray-300">
@@ -67,34 +68,6 @@ export default function LandingPage() {
         </div>
         <div className="z-20 flex items-center bg-gray-700">
             <div className="container flex flex-col items-center justify-between px-6 py-4 mx-auto">
-                <Accordion open={open === 1}>
-                    <AccordionHeader onClick={() => handleOpen(1)}>What is Material Tailwind?</AccordionHeader>
-                    <AccordionBody className="text-white">
-                    We&apos;re not always in the position that we want to be at. We&apos;re constantly
-                    growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
-                    ourselves and actualize our dreams.
-                    </AccordionBody>
-                </Accordion>
-                <Accordion open={open === 2}>
-                    <AccordionHeader onClick={() => handleOpen(2)}>
-                    How to use Material Tailwind?
-                    </AccordionHeader>
-                    <AccordionBody className="text-white">
-                    We&apos;re not always in the position that we want to be at. We&apos;re constantly
-                    growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
-                    ourselves and actualize our dreams.
-                    </AccordionBody>
-                </Accordion>
-                <Accordion open={open === 3}>
-                    <AccordionHeader onClick={() => handleOpen(3)}>
-                    What can I do with Material Tailwind?
-                    </AccordionHeader>
-                    <AccordionBody className="text-white">
-                    We&apos;re not always in the position that we want to be at. We&apos;re constantly
-                    growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
-                    ourselves and actualize our dreams.
-                    </AccordionBody>
-                </Accordion>
             </div>
         </div>
         <div className="z-20 flex items-center bg-gray-600">
@@ -117,20 +90,7 @@ export default function LandingPage() {
         </div>
         
         <div className="z-20 flex items-center bg-gray-400">
-            <div className="container flex flex-col items-center justify-between px-6 py-4 mx-auto">
-                <div className="flex flex-col">
-                    {/* <img src="null" className="mx-auto rounded-full w-28"/> */}
-                    <p className="my-6 text-xl dark:text-white">
-                        テストテスト
-                    </p>
-                    <h2 className="max-w-3xl py-2 mx-auto text-2xl font-bold text-gray-800 md:text-6xl dark:text-white">
-                        Building digital products, brands, and experiences.
-                    </h2>
-                    <div className="flex items-center justify-center mt-4">
-                        <button className=" @apply px-4 py-2 bg-blue-500 text-white rounded-lg transition-colors duration-300 ease-in-out hover:bg-blue-600">ホバーボタンです</button>
-                    </div>
-                </div>
-            </div>
+            <Carousel slides={carouselImages} />
         </div>
     </main>
 );
