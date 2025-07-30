@@ -1,5 +1,7 @@
 'use client';
+import Accordion from "@/components/Accordion";
 import Carousel from "@/components/Carousel";
+import RadarChart from "@/components/RadarChart";
 import React from "react";
 
 export default function LandingPage() {
@@ -12,6 +14,21 @@ export default function LandingPage() {
         "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
         "https://www.skyweaver.net/images/media/wallpapers/wallpaper1.jpg",
     ];
+
+    const accordionItems = [
+        {
+            title: "Accordion Item 1",
+            desc: "This is the description for accordion item 1.",
+        },
+        {
+            title: "Accordion Item 2",
+            desc: "This is the description for accordion item 2.",
+        },
+        {
+            title: "Accordion Item 3",
+            desc: "This is the description for accordion item 3.",
+        },
+    ]
 
     return (
     <main className="h-screen font-mono bg-white dark:bg-gray-800">
@@ -68,6 +85,7 @@ export default function LandingPage() {
         </div>
         <div className="z-20 flex items-center bg-gray-700">
             <div className="container flex flex-col items-center justify-between px-6 py-4 mx-auto">
+                <Accordion items={accordionItems} />
             </div>
         </div>
         <div className="z-20 flex items-center bg-gray-600">
@@ -91,6 +109,10 @@ export default function LandingPage() {
         
         <div className="z-20 flex items-center bg-gray-400">
             <Carousel slides={carouselImages} />
+        </div>
+
+        <div className="z-20 flex justify-center">
+            <RadarChart userData={null} />
         </div>
     </main>
 );
