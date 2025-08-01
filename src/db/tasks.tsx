@@ -7,11 +7,19 @@ export async function getDocumentList(collectionName: string) {
         const docRef = collection(db, collectionName);
         const docSnap = await getDocs(docRef);
 
-        if(!docSnap.exists())
+        if(docSnap.empty)
         {
             console.log("コレクションが見つかりません");
             return null;
         }
+        
+        return docSnap.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+    } catch (error) {
+        console.error("ドキュメントリストの取得に失敗しました:", error);
+        return null;
     }
 }
 

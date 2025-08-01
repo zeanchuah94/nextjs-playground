@@ -45,7 +45,7 @@ const DraggableSquare = ({id, color}) => {
           })
         ]
     });
-  }, []);
+  }, [color]);
 
   // ドラッグ時のリスナー
   const dragMoveListener = (event) => {

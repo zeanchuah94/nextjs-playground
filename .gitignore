@@ -42,3 +42,7 @@ next-env.d.ts
 
 firebase-admin-sdk.json
 .env.local
+.firebase/hosting.bg.cache
+.firebase/hosting.b3V0.cache
+.firebaserc
+.github/workflows/firebase-hosting-pull-request.yml

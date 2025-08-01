@@ -27,7 +27,7 @@ export async function getEmployees(searchTerm: string = "") {
         const snapshot = await getDocs(q);
         return snapshot.docs.map((doc) => ({
             id: doc.id,
-            ...doc.data(),
+            ...(doc.data() as DocumentData),
         }));
     }
     catch (error)
@@ -62,7 +62,7 @@ export async function getClients(searchTerm = "") {
     const snapshot = await getDocs(q);
     return snapshot.docs.map((doc) => ({
       id: doc.id,
-      ...doc.data(),
+      ...(doc.data() as DocumentData),
     }));
   } catch (error) {
     console.error("取引先データの取得に失敗しました:", error);
@@ -95,7 +95,7 @@ export async function getEquipment(searchTerm = "") {
     const snapshot = await getDocs(q);
     return snapshot.docs.map((doc) => ({
       id: doc.id,
-      ...doc.data(),
+      ...(doc.data() as DocumentData),
     }));
   } catch (error) {
     console.error("備品データの取得に失敗しました:", error);
@@ -113,7 +113,7 @@ export async function getDocumentById(collectionName: string, docId: string) {
     if (docSnap.exists()) {
       return {
         id: docSnap.id,
-        ...docSnap.data(),
+        ...(docSnap.data() as DocumentData),
       };
     } else {
       console.log("ドキュメントが見つかりません");
