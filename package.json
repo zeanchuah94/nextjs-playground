@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@next/third-parties": "^15.4.5",
     "axios": "^1.10.0",
     "chart.js": "^4.5.0",
     "embla-carousel-autoplay": "^8.6.0",
