@@ -1,6 +1,7 @@
 'use client';
 import Accordion from "@/components/Accordion";
 import Carousel from "@/components/Carousel";
+import NameCard from "@/components/NameCard";
 import RadarChart from "@/components/RadarChart";
 import React from "react";
 
@@ -111,8 +112,12 @@ export default function LandingPage() {
             <Carousel slides={carouselImages} />
         </div>
 
-        <div className="z-20 flex justify-center">
+        <div className="z-20 flex justify-center h-100">
             <RadarChart userData={null} />
+        </div>
+
+        <div className="z-20 flex bg-gray-200 h-100 p-20">
+            <NameCard />
         </div>
     </main>
 );
